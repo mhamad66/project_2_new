@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">Create Post</div>
                 <div class="card-body">
-                    <form method="post" action="{{ route('posts.store') }}">
+                    <form method="post" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+                    {{-- <input type="hidden" value="{{Auth::user()->id}}" name='user_id'> --}}
                         <div class="form-group">
                             @csrf
                             <label class="label">Post Title: </label>
@@ -17,6 +18,10 @@
                             <label class="label">Post Body: </label>
                             <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="posts image">post image:</label>
+                          <input type="file" class="form-control" name="image" value="">
+                          </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" />
                         </div>

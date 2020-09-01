@@ -4,7 +4,7 @@ namespace App;
   
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-  
+use APP\User;  
 class Post extends Model
 {
     use SoftDeletes;
@@ -16,7 +16,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body','user_id','image'];
    
     /**
      * The has Many Relationship
@@ -26,5 +26,11 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
+
+
+    public function posts()
+    {
+        return $this->belongsTo(User::class);
     }
 }

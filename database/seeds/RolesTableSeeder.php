@@ -13,6 +13,15 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
 
+        // ------------wait----------------
+        $super_admin = App\Role::create([
+            'name'=>'waiting',
+            'display_name'=>'waiting',
+            'description'=>'He cannot do anything until he accepts it'
+        ]);
+
+
+
         // ------------superAdmin----------------
         $super_admin = App\Role::create([
             'name'=>'super_admin',

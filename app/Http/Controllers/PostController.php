@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
    
 use Illuminate\Http\Request;
 use App\Post;
-   
+use Illuminate\Support\Facades\Auth;   
 class PostController extends Controller
 {
     /**
@@ -36,18 +36,24 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-    	$request->validate([
-            'title'=>'required',
-            'body'=>'required',
+    { 
+    $request->validate([
+        'title'=>'required',
+        'body'=>'required',
+        'image'=>'image',
         ]);
-    
-        Post::create($request->all());
-    
-        return redirect()->route('posts.index');
-    }
-    
-    /**
+        
+        Post::create([
+            'title'=>request('title'),
+            'body'=>request('body'),
+            'image'=>$request->image->store('images', 'public'),
+            'user_id'=>Auth::user()->id
+            ]);
+            
+            return redirect()->route('posts.index');
+        }
+        
+        /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -57,4 +63,10 @@ class PostController extends Controller
     	$post = Post::find($id);
         return view('pages.posts.show', compact('post'));
     }
+
+
+public function edit(){
+
+}
+
 }

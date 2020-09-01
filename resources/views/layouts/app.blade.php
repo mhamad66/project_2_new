@@ -32,14 +32,20 @@
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Start Bootstrap </div>
+      @if ($user->hasRole('waiting'))
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-      <a href="/posts" class="list-group-item list-group-item-action bg-light">posts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-      </div>
+      </div>                        
+                           @else
+      <div class="list-group list-group-flush">
+                               
+                             <a href="/home" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                           <a href="/posts" class="list-group-item list-group-item-action bg-light">posts</a>
+                             <a href="" class="list-group-item list-group-item-action bg-light">quiz</a>
+                             <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+                             <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+                             <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+                           </div>
+                        @endif
     </div>
     <!-- /#sidebar-wrapper -->
 

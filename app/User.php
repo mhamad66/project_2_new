@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use App\Role;
+use App\Post;
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
@@ -38,8 +39,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-//     public function roles()
-//     {
-//       return $this->belongsToMany(Role::class);
-//     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
