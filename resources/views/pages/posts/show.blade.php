@@ -9,8 +9,8 @@
     <img class="card-img-top" src="{{asset('storage/'.$post->image)}}" alt="Card image cap">
     <div class="card-body">
         @if (Auth::user()->id == $post->user_id )
-        <button class="btn-primary btn"> edit</button>
-        <button class="btn-primary btn"> delete</button>
+    <a class="btn-primary btn" href="{{$post->id}}/edit"> edit</a>
+    <a class="btn-primary btn" href="{{$post->id}}"> delete</a>
     @endif
     <h2>{{$post->title}}</h2>
     <p class="card-text">{{$post->body}}</p>
