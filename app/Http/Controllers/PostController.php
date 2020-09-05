@@ -41,14 +41,16 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'image' => 'image|mimes:png,jpg,svg|max:2048',
+            'image' => 'image',
         ]);
 
  
 
         Post::create([
             'title' => request('title'),
+            'image'=>$request->image->store('images', 'public'), 
             'body' => request('body'),
+           
             'user_id' => Auth::user()->id
         ]);
 

@@ -40,7 +40,7 @@
                                
                              <a href="/home" class="list-group-item list-group-item-action bg-light">Dashboard</a>
                            <a href="/posts" class="list-group-item list-group-item-action bg-light">posts</a>
-                             <a href="" class="list-group-item list-group-item-action bg-light">quiz</a>
+                             <a href="/HomeQuiz" class="list-group-item list-group-item-action bg-light">quiz</a>
                              <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                              <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
                              <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
