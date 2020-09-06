@@ -31,13 +31,11 @@
                                 <td>
                                     <a href="{{ route('topics.show',[$topic->id]) }}" class="btn btn-xs btn-primary">view</a>
                                     <a href="{{ route('topics.edit',[$topic->id]) }}" class="btn btn-xs btn-info">edit</a>
-                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("quickadmin.are_you_sure")."');",
-                                        'route' => ['topics.destroy', $topic->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
+                                <form method="POST" action="{{route('topics.destroy',$topic->id)}}" style="display: inline-block;" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-xs">delete</button>
+                                </form>
                                 </td>
                             </tr>
                         @endforeach

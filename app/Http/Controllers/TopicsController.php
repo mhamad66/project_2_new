@@ -60,7 +60,7 @@ class TopicsController extends Controller
     {
         $topic = Topic::findOrFail($id);
 
-        return view('topics.edit', compact('topic'));
+        return view('pages.quiz.topics.edit', compact('topic'));
     }
 
     /**
@@ -89,7 +89,7 @@ class TopicsController extends Controller
     {
         $topic = Topic::findOrFail($id);
 
-        return view('topics.show', compact('topic'));
+        return view('pages.quiz.topics.show', compact('topic'));
     }
 
 

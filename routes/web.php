@@ -27,11 +27,11 @@ Route::resource('comments', 'CommentController');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/HomeQuiz', 'HomeQuizController@index');
     Route::resource('tests', 'TestsController');
-    Route::resource('roles', 'RolesController');
-    Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
+    // Route::resource('roles', 'RolesController');
+    // Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
     // Route::resource('users', 'UsersController');
-    Route::post('users_mass_destroy', ['uses' => 'UsersController@massDestroy', 'as' => 'users.mass_destroy']);
-    Route::resource('user_actions', 'UserActionsController');
+    // Route::post('users_mass_destroy', ['uses' => 'UsersController@massDestroy', 'as' => 'users.mass_destroy']);
+    // Route::resource('user_actions', 'UserActionsController');
     Route::resource('topics', 'TopicsController');
     Route::post('topics_mass_destroy', ['uses' => 'TopicsController@massDestroy', 'as' => 'topics.mass_destroy']);
     Route::resource('questions', 'QuestionsController');
