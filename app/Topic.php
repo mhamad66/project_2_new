@@ -27,4 +27,5 @@ class Topic extends Model
     {
         return $this->hasMany(Question::class, 'topic_id')->withTrashed();
     }
+    
 }

@@ -14,8 +14,16 @@ class CreateQuestionOptionsTable extends Migration
     public function up()
     {
         Schema::create('question_options', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->bigInteger('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions');
+            $table->string('option')->nullable();
+            $table->tinyInteger('correct')->nullable()->default(0);
+            
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index(['deleted_at']);
         });
     }
 

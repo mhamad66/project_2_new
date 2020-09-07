@@ -15,7 +15,6 @@ class CreateTopicsTable extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            
             $table->timestamps();
             $table->softDeletes();
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Master.Admin')
 
 @section('content')
     <h3 class="page-title">title</h3>

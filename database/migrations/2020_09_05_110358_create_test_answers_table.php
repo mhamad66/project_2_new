@@ -14,8 +14,15 @@ class CreateTestAnswersTable extends Migration
     public function up()
     {
         Schema::create('test_answers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('test_id')->unsigned()->nullable();
+            $table->integer('question_id')->unsigned()->nullable();
+            $table->tinyInteger('correct')->nullable()->default(0);
+            $table->integer('option_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            $table->index(['deleted_at']);
         });
     }
 
