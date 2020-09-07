@@ -93,15 +93,14 @@
             </div>
             <!--== LEFT MENU ==-->
             <div class="sb2-13">
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i>
-                            Dashboard</a>
+                <ul class="collapsible " data-collapsible="accordion">
+                    <li><a href="/home" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        Dashboard</a>
                     </li>
-                    <li><a href="admin-setting.html"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
+                    <li><a href="/posts"><i class="fa fa-cogs" aria-hidden="true"></i> posts</a>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
-                                                                                   aria-hidden="true"></i> All
-                            Courses</a>
+                    <li><a href="/HomeQuiz" class="collapsible-heade"><i class="fa fa-book"
+                        aria-hidden="true"></i> quiz</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
                                 <li><a href="admin-all-courses.html">All Course</a>
@@ -237,9 +236,35 @@
             </div>
         </div>
 
+{{--  --}}
+  <!--== BODY INNER CONTAINER ==-->
+  <div class="sb2-2">
+    <!--== breadcrumbs ==-->
+    <div class="sb2-2-2">
+        <ul>
+            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            </li>
+            <li class="active-bre"><a href="#"> Dashboard</a>
+            </li>
+            <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+            </li>
+        </ul>
+    </div>
+    <!--== DASHBOARD INFO ==-->
+    
+    
+    <!--== User Details ==-->
+   @yield('content')
+    </div>
+    
+ 
+    
+</div>
 
-        @yield('content')
+</div>
+</div>
 
+{{--  --}}
 
     </div>
 </div>

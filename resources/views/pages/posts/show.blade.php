@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('Master.Admin')
    
 @section('content')
 <div class="container">
 
 
 
-<div class="card" >
-    <img class="card-img-top" src="{{asset('storage/'.$post->image)}}" alt="Card image cap">
+<div class="card" style="padding: 15px" >
+    <img class="card-img-top" src="{{asset('storage/'.$post->image)}}" alt="Card image cap" width="100%" height="100%">
     <div class="card-body">
         @if (Auth::user()->id == $post->user_id )
     <a class="btn-primary btn" href="{{$post->id}}/edit"> edit</a>

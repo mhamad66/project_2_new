@@ -13,9 +13,9 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    <label for=" " class="control-label" title="title"> Title</label>
-                    {{-- {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!} --}}
-                <input type="text" class="form-control" name="title">
+                        <label for=" " class="control-label" title="title"> Title</label>
+                        {{-- {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!} --}}
+                    <input type="text" class="form-control" name="title">
                     <p class="help-block"></p>
                     @if($errors->has('title'))
                         <p class="help-block">

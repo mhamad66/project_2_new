@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Master.Admin')
 
 @section('content')
 
@@ -11,8 +11,8 @@
   <div class="row">
       @foreach ($posts as $post)
       <div class="col-lg-3">
-          <div class="card" style="width: 18rem;">
-              <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="...">
+          <div class="card" style="width:18rem;">
+              <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="..." width="100%" height="100%">
               <div class="card-body">
               <h5 class="card-title">{{$post->title}}</h5>
               <p class="card-text">{{$post->body}}</p>

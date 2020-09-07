@@ -7,6 +7,7 @@ use App\QuestionsOption;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreQuestionsRequest;
 use App\Http\Requests\UpdateQuestionsRequest;
+use App\Topic;
 
 class QuestionsController extends Controller
 {
@@ -34,19 +35,11 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        $relations = [
-            'topics' => \App\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
-        ];
+        
+            $topics = Topic::all();
+    
 
-        $correct_options = [
-            'option1' => 'Option #1',
-            'option2' => 'Option #2',
-            'option3' => 'Option #3',
-            'option4' => 'Option #4',
-            'option5' => 'Option #5'
-        ];
-
-        return view('pages.quiz.questions.create', compact('correct_options') + $relations);
+        return view('pages.quiz.questions.create')->with('topics',$topics);
     }
 
     /**
