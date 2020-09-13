@@ -45,13 +45,24 @@
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
+<<<<<<< HEAD
            
+=======
+            <div class="top-not-cen">
+                <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i
+                            class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
+                <a class='waves-effect btn-noti' href="admin-course-enquiry.html" title="course booking messages"><i
+                            class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
+                <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i
+                            class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
+            </div>
+>>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
             <!-- Dropdown Trigger -->
             <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img
-                    src="images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        src="images/user/6.png" alt=""/>My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
 
             <!-- Dropdown Structure -->
@@ -135,23 +146,73 @@
             <div class="sb2-13">
                 <ul class="collapsible " data-collapsible="accordion">
                     <li><a href="/home" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        Dashboard</a>
+                            Dashboard</a>
                     </li>
                     <li><a href="/posts"><i class="fa fa-cogs" aria-hidden="true"></i> posts</a>
                     </li>
                     <li><a href="/HomeQuiz" class="collapsible-heade"><i class="fa fa-book"
-                        aria-hidden="true"></i> quiz</a>
+                                                                         aria-hidden="true"></i> quiz</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
                                 <li><a href="admin-all-courses.html">All Course</a>
                                 </li>
                                 <li><a href="admin-add-courses.html">Add New Course</a>
                                 </li>
-                                <li><a href="admin-trash-courses.html">Trash Course</a>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    {{-------------------------------Categorie --------------------------------------}}
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                   aria-hidden="true"></i>
+                            Categories</a>
+                        <div class="collapsible-body left-sub-menu">
+                            <ul>
+                                <li><a href="{{route('IndexCategorie')}}">All Categorie</a>
+                                </li>
+                                <li><a href="{{route('AddCategorie')}}">Add New Categorie</a>
+                                </li>
+                                <li><a href="admin-trash-courses.html">Trash Categorie</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+
+                    {{-------------------------------End Categorie -----------------------------------}}
+
+
+
+                    {{--------------------------------------- Courses--------------------------}}
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                   aria-hidden="true"></i>
+                            Courses</a>
+                        <div class="collapsible-body left-sub-menu">
+                            <ul>
+                                <li><a href="{{route('IndexCourse')}}">All Course</a>
+                                </li>
+                                <li><a href="{{route('AddCourse')}}">Add New Course</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {{---------------------------------------  End Courses  ---------------------}}
+                    {{--------------------------------------- Lecture--------------------------}}
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                   aria-hidden="true"></i>
+                            Lecture </a>
+                        <div class="collapsible-body left-sub-menu">
+                            <ul>
+                                <li><a href="{{route('IndexLecure')}}">All Lecture</a>
+                                </li>
+                                <li><a href="{{route('AddLecture')}}">Add Lecture</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {{---------------------------------------  End Lecture  ---------------------}}
+
+
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user"
                                                                                    aria-hidden="true"></i> Users</a>
                         <div class="collapsible-body left-sub-menu">
@@ -192,6 +253,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 {{--  --}}
   <!--== BODY INNER CONTAINER ==-->
   <div class="sb2-2">
@@ -200,11 +262,30 @@
     
     <!--== User Details ==-->
    @yield('content')
+=======
+    {{--  --}}
+    <!--== BODY INNER CONTAINER ==-->
+        <div class="sb2-2">
+            <!--== breadcrumbs ==-->
+            <div class="sb2-2-2">
+                <ul>
+                    <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    </li>
+                    <li class="active-bre"><a href="#"> Dashboard</a>
+
+                </ul>
+            </div>
+            <!--== DASHBOARD INFO ==-->
+
+
+            <!--== User Details ==-->
+            @yield('content')
+
+        </div>
+
+
+>>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf
     </div>
-    
- 
-    
-</div>
 
 </div>
 @endif
@@ -212,7 +293,7 @@
 
 {{--  --}}
 
-    </div>
+</div>
 </div>
 @endif
 @yield('javascript')

@@ -14,14 +14,113 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 
+Route::get('/a', function () {return view(\route('AddCourse'));});
 
-Route::get('/test',function (){
-   return view('pages.test');
-});
-//
+
+
 
 
 Auth::routes();
+
+
+Route::prefix('Categorie')->middleware('auth')->group( function () {
+//----------------------------------------  categorie -------------------------------------------------------------------
+//index
+    Route::get('/IndexCategorie', 'Categorie\CategorieControler@index')->name('IndexCategorie');
+
+//end index
+
+
+//add
+
+    Route::get('/AddCategorie', 'Categorie\CategorieControler@add')->name('AddCategorie');
+    Route::post('/AddCategorie', 'Categorie\CategorieControler@add')->name('AddCategorie');
+//end add
+
+//Edite
+
+    Route::get('/EditeCategorie/{id}', 'Categorie\CategorieControler@edite')->name('EditeCategorie');
+    Route::post('/EditeCategorie/{id}', 'Categorie\CategorieControler@edite')->name('EditeCategorie');
+
+//end Edite
+
+//Delete
+    Route::get('/DeleteCategorie/{id}', 'Categorie\CategorieControler@Delete')->name('DeleteCategorie');
+    Route::post('/DeleteCategorie/{id}', 'Categorie\CategorieControler@Delete')->name('DeleteCategorie');
+
+
+//End Delete
+});
+
+
+
+Route::prefix('Course')->middleware('auth')->group( function () {
+//----------------------------------------  categorie -------------------------------------------------------------------
+//index
+
+    Route::get('/IndexCourse', 'Course\CourseController@index')->name('IndexCourse');
+
+
+    Route::get('/InfoCourse/{id}', 'Course\CourseController@info')->name('InfoCourse');
+
+//end index
+
+
+//add
+
+    Route::get('/AddCourse', 'Course\CourseController@add')->name('AddCourse');
+    Route::post('/AddCourse', 'Course\CourseController@add')->name('AddCourse');
+//end add
+
+
+//Edite
+
+    Route::get('/EditeCourse/{id}', 'Course\CourseController@edite')->name('EditeCourse');
+    Route::post('/EditeCourse/{id}', 'Course\CourseController@edite')->name('EditeCourse');
+
+//end Edite
+
+//Delete
+    Route::get('/DeleteCourse/{id}', 'Course\CourseController@Delete')->name('DeleteCourse');
+    Route::post('/DeleteCourse/{id}', 'Course\CourseController@Delete')->name('DeleteCourse');
+
+
+//End Delete
+});
+
+
+Route::prefix('Lecture')->middleware('auth')->group( function () {
+
+    Route::get('/IndexLecture', 'Lecture\LectureController@index')->name('IndexLecure');
+
+
+
+    Route::get('/AddLecture/{id}', 'Lecture\LectureController@AddId')->name('AddLectureId');
+//    Route::post('/AddLecture/{id}', 'Lecture\LectureController@AddId')->name('AddLectureId');
+    Route::get('/AddLecture', 'Lecture\LectureController@add')->name('AddLecture');
+    Route::post('/AddLecture', 'Lecture\LectureController@add')->name('AddLecture');
+
+
+
+
+
+    Route::get('/DeleteLecture/{id}', 'Lecture\LectureController@delete')->name('DeleteLecture');
+
+
+
+
+
+
+        Route::post('/EditeLecture/{id}', 'Lecture\LectureController@edite')->name('EditeLecture');
+        Route::get('/EditeLecture/{id}', 'Lecture\LectureController@edite')->name('EditeLecture');
+
+
+
+});
+
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');

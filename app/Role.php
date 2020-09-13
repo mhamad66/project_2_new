@@ -15,9 +15,10 @@ class Role extends LaratrustRole
     // {
     //   return $this->belongsToMany(user::class);
     // }
+    public  function  users(){
 
-
-
+        return $this->belongsToMany('App\User','role_user');
+    }
 
 
 

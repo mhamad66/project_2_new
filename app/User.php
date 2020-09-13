@@ -43,6 +43,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+<<<<<<< HEAD
 // start has image user
     public function hasImageUser()
     {
@@ -80,4 +81,18 @@ public function hasImageIdentificationPaper()
     public function profile(){
         return $this->hasOne(profile::class);
     }
+=======
+    public  function  Roles(){
+
+        return $this->belongsToMany('App\Role','role_user');
+    }
+
+
+    public function Course(){
+
+        return $this->hasMany('App\Course');
+    }
+
+
+>>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf
 }
