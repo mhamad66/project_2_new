@@ -40,23 +40,20 @@
             </a>
         </div>
         <!--== SEARCH ==-->
-        <div class="col-md-6 col-sm-6 mob-hide">
-            <k/form>
+        <div class="col-md-6 col-sm-6 ">
+            {{-- <k/form> --}}
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
-<<<<<<< HEAD
            
-=======
             <div class="top-not-cen">
-                <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i
+                {{-- <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i
                             class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
                 <a class='waves-effect btn-noti' href="admin-course-enquiry.html" title="course booking messages"><i
                             class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
                 <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i
-                            class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
+                            class="fa fa-tag" aria-hidden="true"></i><span>5</span></a> --}}
             </div>
->>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
@@ -262,18 +259,18 @@
     
     <!--== User Details ==-->
    @yield('content')
-=======
+{{-- ======= --}}
     {{--  --}}
     <!--== BODY INNER CONTAINER ==-->
         <div class="sb2-2">
             <!--== breadcrumbs ==-->
             <div class="sb2-2-2">
-                <ul>
+                {{-- <ul>
                     <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="active-bre"><a href="#"> Dashboard</a>
 
-                </ul>
+                </ul> --}}
             </div>
             <!--== DASHBOARD INFO ==-->
 
@@ -284,7 +281,7 @@
         </div>
 
 
->>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf
+{{-- >>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf --}}
     </div>
 
 </div>
