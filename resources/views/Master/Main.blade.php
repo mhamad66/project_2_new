@@ -103,14 +103,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="ed-com-t1-right">
-                    <ul>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a>
-                        </li>
-                        <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
+                
 
             </div>
         </div>
@@ -333,6 +326,24 @@
                             </li>
                             <li><a href="contact-us.html">Contact us</a>
                             </li>
+                            {{-- start login and register --}}
+                            @if (Route::has('login'))
+                            @auth
+                               <li> <a class="nav-link" href="{{ url('/home') }}">Home</a></li> 
+                            @else
+                            <li>    
+                            <a class="nav-link" href="{{ route('login') }}">login</a>
+                        </li>    
+                                @if (Route::has('register'))
+                                <li>
+                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            </li>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
+        
+                        {{-- end login and register --}}
                         </ul>
                     </div>
                 </div>
@@ -340,14 +351,6 @@
 
                 </div>
 
-            </div>
-        </div>
-    </div>
-    <div class="search-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                </div>
             </div>
         </div>
     </div>
@@ -644,10 +647,11 @@
 
 
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/custom.js') }}"></script>
 <script src="{{ asset('js/main.min.js') }}"></script>
-<script src="{{ asset('js/materialize.min.js') }}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('js/myJs.js') }}"></script>
+<script src="{{ asset('js/materialize.min.js') }}"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
 
 
 

@@ -16,12 +16,12 @@ class Test extends Model
 
     protected $fillable = ['user_id', 'result'];
 
-    // public static function boot()
-    // {
-    //     parent::boot();
+    public static function boot()
+    {
+        parent::boot();
 
-    //     Test::observe(new \App\Observers\UserActionsObserver);
-    // }
+        Test::observe(new \App\Observers\UserActionsObserver);
+    }
 
     public function user()
     {

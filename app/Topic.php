@@ -16,16 +16,15 @@ class Topic extends Model
 
     protected $fillable = ['title'];
 
-    // public static function boot()
-    // {
-    //     parent::boot();
+    public static function boot()
+    {
+        parent::boot();
 
-    //     Topic::observe(new \App\Observers\UserActionsObserver);
-    // }
+        Topic::observe(new \App\Observers\UserActionsObserver);
+    }
 
     public function questions()
     {
         return $this->hasMany(Question::class, 'topic_id')->withTrashed();
     }
-    
 }

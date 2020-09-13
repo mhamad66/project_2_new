@@ -43,4 +43,41 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+// start has image user
+    public function hasImageUser()
+    {
+        if (preg_match('/image_user/', $this->profile->image_user, $match)) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+// start has image_identification_paper
+public function hasImageIdentificationPaper()
+    {
+        if (preg_match('/image_identification_paper/', $this->profile->image_identification_paper, $match)) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    public function getImageUser()
+    {
+        return $this->profile->image_user;
+    }
+    public function image_identification_paper()
+    {
+        return $this->profile->image_identification_paper;
+    }
+    public function getAvatar()
+    {
+        $hash =  md5(strtolower(trim($this->attributes['email'])));
+
+        return "https://gravatar.com/avatar/$hash";
+    }
+    public function profile(){
+        return $this->hasOne(profile::class);
+    }
 }

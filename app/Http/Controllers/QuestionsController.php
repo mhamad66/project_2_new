@@ -76,13 +76,10 @@ class QuestionsController extends Controller
      */
     public function edit($id)
     {
-        $relations = [
-            'topics' => \App\Topic::get()->pluck('title', 'id')->prepend('Please select', ''),
-        ];
-
+       $topics=  Topic::all();
         $question = Question::findOrFail($id);
 
-        return view('questions.edit', compact('question') + $relations);
+        return view('pages.quiz.questions.edit', compact('question'))->with('topics',$topics);
     }
 
     /**
@@ -115,7 +112,7 @@ class QuestionsController extends Controller
 
         $question = Question::findOrFail($id);
 
-        return view('questions.show', compact('question') + $relations);
+        return view('pages.quiz.questions.show', compact('question') + $relations);
     }
 
 

@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateQuestionsTable extends Migration
 {
@@ -16,7 +15,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('topic_id')->unsigned()->nullable();
-            $table->foreign('topic_id')->references('id')->on('topics');
+            $table->foreign('topic_id', 'fk_256_topic_topic_id_question')->references('id')->on('topics');
             $table->text('question_text')->nullable();
             $table->text('code_snippet')->nullable();
             $table->text('answer_explanation')->nullable();
@@ -25,7 +24,7 @@ class CreateQuestionsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['deleted_at']);     
+            $table->index(['deleted_at']);
         });
     }
 

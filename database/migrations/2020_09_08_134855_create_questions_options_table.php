@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionOptionsTable extends Migration
+class CreateQuestionsOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +12,10 @@ class CreateQuestionOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_options', function (Blueprint $table) {
+        Schema::create('questions_options', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->integer('question_id')->unsigned()->nullable();
+            $table->foreign('question_id', 'fk_257_question_question_id_questions_option')->references('id')->on('questions');
             $table->string('option')->nullable();
             $table->tinyInteger('correct')->nullable()->default(0);
             
@@ -34,6 +33,6 @@ class CreateQuestionOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_options');
+        Schema::dropIfExists('questions_options');
     }
 }

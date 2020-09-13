@@ -2,83 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Test;
+use App\TestAnswer;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreResultsRequest;
+use App\Http\Requests\UpdateResultsRequest;
 
 class ResultsController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('admin')->except('index', 'show');
+    }
+
     /**
-     * Display a listing of the resource.
+     * Display a listing of Result.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $results = Test::all()->load('user');
+
+
+        return view('pages.quiz.results.index', compact('results'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * Display Result.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
-    }
+        $test = Test::find($id)->load('user');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if ($test) {
+            $results = TestAnswer::where('test_id', $id)
+                ->with('question')
+                ->with('question.options')
+                ->get()
+            ;
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('pages.quiz.results.show', compact('test', 'results'));
     }
 }

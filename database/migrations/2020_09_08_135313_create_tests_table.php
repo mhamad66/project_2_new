@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
-class CreateTopicsTable extends Migration
+
+class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateTopicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('tests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->text('result')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
             $table->index(['deleted_at']);
         });
     }
@@ -29,7 +29,6 @@ class CreateTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topics');
+        Schema::dropIfExists('tests');
     }
 }
-

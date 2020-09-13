@@ -20,12 +20,12 @@ class Question extends Model
 
     protected $fillable = ['question_text', 'code_snippet', 'answer_explanation', 'more_info_link', 'topic_id'];
 
-        // public static function boot()
-        // {
-        //     parent::boot();
+    public static function boot()
+    {
+        parent::boot();
 
-        //     Question::observe(new \App\Observers\UserActionsObserver);
-        // }
+        Question::observe(new \App\Observers\UserActionsObserver);
+    }
 
     /**
      * Set to null if empty

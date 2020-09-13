@@ -31,6 +31,7 @@ Route::resource('comments', 'CommentController');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/HomeQuiz', 'HomeQuizController@index');
     Route::resource('tests', 'TestsController');
+    Route::resource('profile', 'profileController');
     // Route::resource('roles', 'RolesController');
     // Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
     // Route::resource('users', 'UsersController');

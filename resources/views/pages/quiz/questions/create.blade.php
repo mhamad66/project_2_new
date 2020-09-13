@@ -1,8 +1,6 @@
 @extends('Master.Admin')
 @section('content')
-<div class="container">    
-<h3 class="page-title">title</h3>
-<form method="POST" action="{{route('questions.store')}}"></form>
+<form method="POST" action="{{route('questions.store')}}">
 @csrf    
 <div class="panel panel-default">
         <div class="panel-heading">
@@ -13,7 +11,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                   <label for="" class="control-label"> Topic</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="topic_id">
                     @foreach ($topics as $topic)
                     <option value="{{ $topic->id}}">{{ $topic->title }}</option>
                     @endforeach
@@ -122,12 +120,12 @@
                     {{-- {!! Form::label('correct', 'Correct', ['class' => 'control-label']) !!}
                     {!! Form::select('correct', $correct_options, old('correct'), ['class' => 'form-control']) !!} --}}
                     <label for="" class="control-label">corect</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="">option1</option>
-                        <option value="">option2</option>
-                        <option value="">option3</option>
-                        <option value="">option4</option>
-                        <option value="">option5</option>
+                    <select class="form-control" id="exampleFormControlSelect1" name="correct">
+                    <option value="1">option1</option>
+                        <option value="2">option2</option>
+                        <option value="3">option3</option>
+                        <option value="4">option4</option>
+                        <option value="5">option5</option>
                     </select>
                     <p class="help-block"></p>
                     @if($errors->has('correct'))
@@ -185,8 +183,5 @@
     </div>
     <button type='submit' class="btn btn-primary">save</button>
 </from>
-</div>
-{{-- {!! Form::submit(trans('quickadmin.save'), ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!} --}}
 @endsection
 

@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateResultsTable extends Migration
+class CreateTestAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +12,15 @@ class CreateResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('results', function (Blueprint $table) {
+        Schema::create('test_answers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id', 'fk_254_user_user_id_result')->references('id')->on('users');
-            $table->string('correct')->nullable();
-            $table->datetime('date')->nullable();
+            $table->integer('test_id')->unsigned()->nullable();
             $table->integer('question_id')->unsigned()->nullable();
-            $table->foreign('question_id', 'fk_257_question_question_id_result')->references('id')->on('questions');
-
+            $table->tinyInteger('correct')->nullable()->default(0);
+            $table->integer('option_id')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-
             $table->index(['deleted_at']);
         });
     }
@@ -36,6 +32,6 @@ class CreateResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('results');
+        Schema::dropIfExists('test_answers');
     }
 }

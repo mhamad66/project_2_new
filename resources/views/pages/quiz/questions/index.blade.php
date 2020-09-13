@@ -33,7 +33,7 @@
                                 <td>
                                     <a href="{{ route('questions.show',[$question->id]) }}" class="btn btn-xs btn-primary">view</a>
                                     <a href="{{ route('questions.edit',[$question->id]) }}" class="btn btn-xs btn-info">edit</a>
-                                    <form method="POST" action="{{route('questions.destroy',$topic->id)}}" style="display: inline-block;" >
+                                    <form method="POST" action="{{route('questions.destroy',$question->id)}}" style="display: inline-block;" >
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-xs">delete</button>

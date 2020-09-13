@@ -27,7 +27,9 @@
 </head>
 
 <body>
-<!--== MAIN CONTRAINER ==-->
+    @if ($user = auth::user())
+
+    <!--== MAIN CONTRAINER ==-->
 <div class="container-fluid sb1">
     <div class="row">
         <!--== LOGO ==-->
@@ -39,21 +41,11 @@
         </div>
         <!--== SEARCH ==-->
         <div class="col-md-6 col-sm-6 mob-hide">
-            <form class="app-search">
-                <input type="text" placeholder="Search..." class="form-control">
-                <a href="#"><i class="fa fa-search"></i></a>
-            </form>
+            <k/form>
         </div>
         <!--== NOTIFICATION ==-->
         <div class="col-md-2 tab-hide">
-            <div class="top-not-cen">
-                <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i
-                        class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
-                <a class='waves-effect btn-noti' href="admin-course-enquiry.html" title="course booking messages"><i
-                        class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
-                <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i
-                        class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
-            </div>
+           
         </div>
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
@@ -64,19 +56,67 @@
 
             <!-- Dropdown Structure -->
             <ul id='top-menu' class='dropdown-content top-menu-sty'>
-                <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs"
-                                                                               aria-hidden="true"></i>Admin Setting</a>
+                <li>
+                    @if ($user->hasRole('super_admin'))
+                    <a class="waves-effect" href="{{route('users.index')}}"><i class="fa fa-cogs"
+                        aria-hidden="true"></i>users</a>
+                    @endif
                 </li>
                 <li class="divider"></li>
-                <li><a href="#" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i>
-                        Logout</a>
+                <li>
+                    <a class="ho-dr-con-last waves-effect" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                   <i class="fa fa-sign-in" aria-hidden="true"></i> logout
+                 </a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     @csrf
+                 </form>
                 </li>
             </ul>
-        </div>
+         </div>
     </div>
 </div>
 
 <!--== BODY CONTNAINER ==-->
+@if ($user->hasRole('waiting'))
+<div class="container">
+<form  action="{{route('profile.store')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+     <h2 class='p-2' >profile</h2>
+     <div class="form-row">
+       <div class="form-group col-md-6">
+         <label for="name">phone_number</label>
+       <input type="text" class="form-control" name="phone_number">
+       </div>
+       <div class="form-group col-md-6">
+         <label for="facebook">facebook</label>
+       <input type="text" class="form-control" name="facebook">
+       </div>
+     </div>
+     <div class="form-group">
+       <label for="address">address</label><br>
+     <textarea name="address" id="" cols="100" rows="4"></textarea>
+     </div>
+     <div class="form-group">
+       <label for="image">image_user</label>
+        <br>
+     <img src="{{$user->getAvatar()}}" alt="" class="mb-2" style="width: 100px">
+     <input type="file" class="form-control" name="image_user">
+     
+   </div>
+   <div class="form-group">
+    <label for="image_identification_paper">image_identification_paper</label>
+     <br>
+     <img src="{{$user->getAvatar()}}" alt="" class="mb-2" style="width: 100px">
+  
+     <input type="file" class="form-control" name="image_identification_paper" placeholder="image_user">
+  
+</div>
+     <button type="submit" class="btn btn-success">save profile</button>
+   </form>
+</div>
+@else
 <div class="container-fluid sb2">
     <div class="row">
         <div class="sb2-1">
@@ -145,92 +185,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="admin-slider.html"><i class="fa fa-image" aria-hidden="true"></i> Slider</a>
-                    </li>
-                    <li><a href="admin-quick-link.html"><i class="fa fa-external-link-square" aria-hidden="true"></i>
-                            Slider quick link</a>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar"
-                                                                                   aria-hidden="true"></i> Events</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-event-all.html">All Events</a>
-                                </li>
-                                <li><a href="admin-event-add.html">Create New Events</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bullhorn"
-                                                                                   aria-hidden="true"></i> Seminar</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-seminar-all.html">All Seminar</a>
-                                </li>
-                                <li><a href="admin-seminar-add.html">Create New Seminar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-graduation-cap"
-                                                                                   aria-hidden="true"></i> Job
-                            Vacants</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-job-all.html">All Jobs</a>
-                                </li>
-                                <li><a href="admin-job-add.html">Create New Job</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-pencil"
-                                                                                   aria-hidden="true"></i> Exam time
-                            table</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-exam-all.html">All Exams</a></li>
-                                <li><a href="admin-exam-add.html">Add New Exam</a></li>
-                                <li><a href="admin-exam-group-all.html">All Groups</a></li>
-                                <li><a href="admin-exam-group-add.html">Create New Groups</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users"
-                                                                                   aria-hidden="true"></i> Students</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-user-all.html">All Students</a>
-                                </li>
-                                <li><a href="admin-user-add.html">Add New Students</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-commenting-o"
-                                                                                   aria-hidden="true"></i> Enquiry</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-all-enquiry.html">All Enquiry</a></li>
-                                <li><a href="admin-course-enquiry.html">Course Enquiry</a></li>
-                                <li><a href="admin-admission-enquiry.html">Admission Enquiry</a></li>
-                                <li><a href="admin-seminar-enquiry.html">Seminar Enquiry</a></li>
-                                <li><a href="admin-event-enquiry.html">Event Enquiry</a></li>
-                                <li><a href="admin-common-enquiry.html">Common Enquiry</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-cloud-download"
-                                                                                   aria-hidden="true"></i> Import &
-                            Export</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-export-data.html">Export all datas</a>
-                                </li>
-                                <li><a href="admin-import-data.html">Import all datas</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <li><a href="{{route('profile.edit',Auth::user()->id)}}">
+                        <i class="fa fa-image" aria-hidden="true"></i> profile</a>
                     </li>
                 </ul>
             </div>
@@ -239,17 +195,6 @@
 {{--  --}}
   <!--== BODY INNER CONTAINER ==-->
   <div class="sb2-2">
-    <!--== breadcrumbs ==-->
-    <div class="sb2-2-2">
-        <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-            </li>
-            <li class="active-bre"><a href="#"> Dashboard</a>
-            </li>
-            <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
-            </li>
-        </ul>
-    </div>
     <!--== DASHBOARD INFO ==-->
     
     
@@ -262,14 +207,15 @@
 </div>
 
 </div>
+@endif
 </div>
 
 {{--  --}}
 
     </div>
 </div>
-
-
+@endif
+@yield('javascript')
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
 <script src="{{ asset('js/main.min.js') }}"></script>

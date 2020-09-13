@@ -1,50 +1,9 @@
-/*-----------------------------------------
- [MASTER STYLE SHEET]
- * Project: Education Master HTML Template
- * Version: v1.0
- * Copyright 2017-2020 rn53themes
- * Last Changes: 10 jan 2018
- * Author: RN53 Themes
- * Email:      rn53themes@gmail.com
- * Website:    http://www.rn53themes.net 
- -----------------------------------------------*/
-/*-------------------------------------------------
- =  Table of Css
-	All Pages Common CSS Styles
-	1.COLLEGE
-	2.MAIN MENU
-	3.HOME PAGE: PART ONE
-	4.HOME PAGE: COURSE 
-	5.HOME PAGE: EVENT
-	6.HOME PAGE: TAB AND ENQUIRY
-	7.SEARCH BOX
-	8.SLIDER
-	9.HOME PAGE: QUICK LINK 
-	10.TOP COURSES 
-	11.BOTTOM BOOKING 
-	12.BREADCRUM
-	13.COURSE DETAILS
-	14.USER DASHBOARD
-	15.FOOTER GALLERY AND BLOG
-	16.REGISTER LOGIN POPUPS 
-	17.REGISTER LOGIN POPUPS
-	18.STUDENT DASHBOARD 
-	19.STUDENT DASHBOARD - COURSES 
-	20.STUDENT DASHBOARD - TIME LINE 
-	21.MEGA MENU
-	22.SOCIAL MEDIA SHARE 
-	23.SOCIAL MEDIA SHARE
-	24.ABOUT US
-	25.AWARDS
-	26.ADMISSIONN
-	27.SEMINAR
-	28.EVENTS
-	29.CONTACT US
-	30.MOBILE MANU
--------------------------------------------------*/
-/*-------------------------------------------------*/
-/* =  1.All Pages Common CSS Styles
-/*-------------------------------------------------*/
+/* 
+#34495e
+#2c3e50
+#95a5a6
+#7f8c8d
+*/
  body{
      font-family: 'Open Sans', sans-serif;
      padding-right: 0px !important;
@@ -101,7 +60,7 @@
  .con-title h2 span{
      font-size: 36px;
      font-weight:700;
-     color: #f26838;
+     color: #95a5a6;
      line-height: 40px;
 }
  .con-title p{
@@ -559,7 +518,7 @@
     /* margin-top: 60px;
      */
      padding: 80px 0px 65px 0px;
-     background: #002147;
+     background: #34495e;
 }
  .wed-hom-footer h4{
      font-size: 14px;
@@ -877,7 +836,7 @@
  .com-fir-sp-top{
 }
  .ed-top{
-     background: #002147;
+     background: #34495e;
 }
  .ed-com-t1-left{
 }
@@ -910,7 +869,7 @@
      font-size: 12px;
 }
  .ed-com-t1-right ul li:nth-child(1) a{
-     background: #e66030;
+     background: #95a5a6;
 }
  .ed-com-t1-right ul li:nth-child(2) a{
      background: #013673;
@@ -940,7 +899,7 @@
      position:relative;
 }
  .main-menu ul li a:hover{
-     color: #e66030;
+     color: #95a5a6;
 }
  .main-menu ul li a:after{
      content: "";
@@ -949,8 +908,8 @@
      height: 3px;
      bottom: 12px;
      left: 0;
-     color: #e66030;
-     background-color: #e66030;
+     color: #95a5a6;
+     background-color: #95a5a6;
      visibility: hidden;
      -webkit-transform: scaleX(0);
      transform: scaleX(0);
@@ -1503,14 +1462,14 @@
      color: #92a5bb;
      padding: 12px 4px;
      text-align: center;
-     border-right: 1px solid #002147;
+     border-right: 1px solid #34495e;
 }
 
 /*-------------------------------------------------*/
 /* =  7.SEARCH BOX
 /*-------------------------------------------------*/
  .search-top{
-     background: #002147;
+     background: #34495e;
      padding: 12px 0px;
      box-shadow:0 4px 15px 0 rgba(0, 0, 0, 0.32);
     /* z-index: 99;
@@ -1627,7 +1586,7 @@
      text-transform: uppercase;
      font-weight: 700;
      line-height: 28px;
-     color: #e66030;
+     color: #95a5a6;
 }
  .slider-con p{
      font-size: 20px;
@@ -1756,14 +1715,14 @@
      margin-bottom: 0px;
      margin: 0 auto;
      display: table;
-    /* background: #002147;
+    /* background: #34495e;
      */
      position: relative;
     /* padding: 5px 5px 0px 5px;
      */
     /* border-radius: 5px;
      */
-    /* box-shadow: 0 0 5px 0 #002147;
+    /* box-shadow: 0 0 5px 0 #34495e;
      */
 }
  .wed-hom-ser ul li{
@@ -1801,7 +1760,7 @@
 }
  .wed-hom-ser ul li a h4{
      font-size: 32px;
-     color: #002147;
+     color: #34495e;
      font-weight: 600;
      margin-bottom: 5px;
 }
@@ -2495,7 +2454,7 @@
  .log-in-pop-left {
      float: left;
      width: 40%;
-     background: url('../images/login.html') #002147 no-repeat center center;
+     background: url('../images/login.html') #34495e no-repeat center center;
      padding: 12.5% 6%;
      color: #fff;
      height: 100%;
@@ -2640,11 +2599,11 @@
 /* = 17.REGISTER LOGIN POPUPS 
 /*-------------------------------------------------*/
  .in2-top-logo{
-     background: #002147;
+     background: #34495e;
 }
  .in2-search-top{
      background: #013673;
-     border-top: 1px solid #002147;
+     border-top: 1px solid #34495e;
 }
  .in2-main-menu{
 }
@@ -2652,7 +2611,7 @@
      color:#fff;
 }
  .in2-dropdown-content{
-     background-color: #002147;
+     background-color: #34495e;
      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.37);
 }
  .in2-dropdown-content li{
@@ -2858,7 +2817,7 @@
      padding-bottom: 20px;
 }
  .udb-time-line ul li:hover .fa-clock-o{
-     background: #e66030;
+     background: #95a5a6;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
@@ -3120,7 +3079,7 @@
  .mm-arr:after {
 }
  .m-menu-inn > .mm1-s2 > .mm-r-m-btn{
-     background: #002147;
+     background: #34495e;
      padding: 4px 10px;
      color: #fff;
      font-size: 11px;
@@ -3141,7 +3100,7 @@
      margin-bottom:15px;
 }
  .m-menu-inn > .mm2-com > a{
-     background: #002147;
+     background: #34495e;
      padding: 4px 10px;
      color: #fff;
      font-size: 11px;
@@ -3331,7 +3290,7 @@ left: 0;
      line-height: 20px;
 }
  .ed-ad-dec a{
-     background: #002147;
+     background: #34495e;
      padding: 4px 10px;
      color: #fff;
      font-size: 11px;
@@ -3492,7 +3451,7 @@ left: 0;
      display:none;
 }
  .aw-re-btn{
-     background: #002147;
+     background: #34495e;
      padding: 4px 10px;
      color: #fff;
      font-size: 11px;
@@ -3503,7 +3462,7 @@ left: 0;
      display: inline-block;
 }
  .aw-re-btn:hover{
-     background:#f26838;
+     background:#95a5a6;
      color:#fff;
 }
 /*-------------------------------------------------*/
@@ -3843,7 +3802,7 @@ left: 0;
  .pg-eve-reg a:hover{
      color: #ffffff;
      border: 1px solid #d45023;
-     background: #f26838;
+     background: #95a5a6;
 }
  .pg-eve-reg:nth-child(1) a{
 }
@@ -3886,7 +3845,7 @@ left: 0;
  .pg-eve-main ul li:hover .pg-eve-reg a:nth-child(1){
      color: #ffffff;
      border: 1px solid #d45023;
-     background: #f26838;
+     background: #95a5a6;
 }
  .head-2{
      padding: 55px 0px 40px 0px;
@@ -3941,7 +3900,7 @@ left: 0;
      text-align: center;
 }
  .new-con h2 {
-     color: #f26838;
+     color: #95a5a6;
      text-transform: uppercase;
      margin-top: 8px;
      font-size: 24px;
@@ -4041,7 +4000,7 @@ left: 0;
      margin-bottom: 0px;
      font-size: 48px;
      padding: 8px 0px;
-     color: #f26838;
+     color: #95a5a6;
      line-height: 42px;
 }
  .footer-part-form {
@@ -4071,7 +4030,7 @@ left: 0;
      height: 90px;
 }
  .footer-part-form ul li input[type="submit"] {
-     background: #f26838;
+     background: #95a5a6;
      border: 0px solid #c4c4c4;
      color: #fff;
      width: 100%;
@@ -4206,7 +4165,7 @@ left: 0;
      transition:all 0.5s ease;
 }
 .sb1 {
-    background: #002147;
+    background: #34495e;
     position: fixed;
     width: 100%;
     top: 0px;
@@ -4233,7 +4192,7 @@ left: 0;
     border-radius: 0px;
 }
 .sb2 {
-    background: #002147;
+    background: #34495e;
     margin-top: 59px;
 }
 .sb2-1 {
@@ -4268,7 +4227,7 @@ left: 0;
     position: relative;
     overflow: hidden;
     padding: 15px;
-    background: #e66030;
+    background: #95a5a6;
 }
 .sb2-12 ul {
     padding: 0px;
@@ -4304,7 +4263,7 @@ left: 0;
 	margin-top: -4px;	
 }
 .sb2-13 {
-	background: #002147;
+	background: #34495e;
 } 
 .sb2-13 ul {
     /* padding: 20px; */
@@ -4324,7 +4283,7 @@ left: 0;
     padding: 10px 0px;
     border-bottom: 1px solid #002958;
     padding: 12px 20px;
-    background: #002147;
+    background: #34495e;
 }
 .sb2-13 ul li a:after {
     font-family: FontAwesome;
@@ -4376,7 +4335,7 @@ left: 0;
     width: 80%;
     padding: 40px;
     margin-left: 20%;
-    background: #e3e8ea;
+    background: #FFF;
 }
 .sb2-2-1 {
     background: #fff;
@@ -4727,7 +4686,7 @@ left: 0;
     padding: 5px 10px;
     color: #ffffff;
     border-radius: 2px;
-    background: #002147;
+    background: #34495e;
     font-weight: 700;
     font-size: 13px;
     line-height: 26px;
@@ -4789,7 +4748,7 @@ left: 0;
 
 .inn-title {
     padding: 15px 25px;
-    background: #002147;
+    background: #34495e;
 }
 .inn-title h4 {
     font-weight: 700;
@@ -5279,7 +5238,7 @@ width: 100%;
 .ed-ban-cal-le{
     width: 75px;
     height: 70px;
-    background: #e66030;
+    background: #95a5a6;
     border-radius: 2px;
     text-align: center;
     float: left;
@@ -5295,7 +5254,7 @@ width: 100%;
     padding: 12px 0px 6px 0px;
 }
 .ed-ban-cal-le span:nth-child(2){
-    background: #002147;
+    background: #34495e;
     margin-top: 3px;
     text-transform: uppercase;
     padding-top: 1px;
@@ -5336,7 +5295,7 @@ width: 100%;
     box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     /* box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.29); */
-    border: 3px #002147;
+    border: 3px #34495e;
     border-style: dashed;
 }
 .ed-ref-form-inn h4{
@@ -5408,7 +5367,7 @@ input:not(:focus):valid ~ .floating-label{
   color: #8c8c8c;
 }
 .ed-ref-form-inn form ul li input[type="submit"]{
-    background: #e66030;
+    background: #95a5a6;
     color: #fff;
     height: 50px;
     line-height: 50px;
@@ -5695,7 +5654,7 @@ padding: 6px 25px;
     margin-top: 15px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #e66030;	
+    color: #95a5a6;	
 }
 .ad-log-in-con p{}
 .ad-log-in-con form{}
