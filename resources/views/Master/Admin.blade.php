@@ -147,18 +147,26 @@
                     </li>
                     <li><a href="/posts"><i class="fa fa-cogs" aria-hidden="true"></i> posts</a>
                     </li>
-                    <li><a href="/HomeQuiz" class="collapsible-heade"><i class="fa fa-book"
-                                                                         aria-hidden="true"></i> quiz</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-all-courses.html">All Course</a>
-                                </li>
-                                <li><a href="admin-add-courses.html">Add New Course</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
+                    {{--------------------------------------- quiz--------------------------}}
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                                 aria-hidden="true"></i>
+                                            quiz </a>
+                                                <div class="collapsible-body left-sub-menu">
+                                                    <ul>
+                                                    <li><a href="/HomeQuiz">quiz </a>
+                                                    </li>
+                                                    <li><a href="{{ route('topics.index') }}"> topic</a>
+                                                    </li>
+                                                    <li><a href="{{ route('questions.index') }}">question</a>
+                                                    </li>
+                                                    <li><a href="{{ route('questions_options.index') }}"> question_option</a>
+                                                    </li>
+                                                    <li><a href="{{route('AddLecture')}}">result</a>
+                                                    </li>
+                                                    </ul>
+                                                    </div>
+                                                    </li>
+{{---------------------------------------  End quiz  ---------------------}}
 
                     {{-------------------------------Categorie --------------------------------------}}
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
@@ -276,12 +284,11 @@
 
 
             <!--== User Details ==-->
-            @yield('content')
+            {{-- @yield('content') --}}
 
         </div>
 
 
-{{-- >>>>>>> a254e4bc63b5f5f5542c26daed1ded398ecbabdf --}}
     </div>
 
 </div>

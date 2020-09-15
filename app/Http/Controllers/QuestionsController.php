@@ -36,10 +36,17 @@ class QuestionsController extends Controller
     public function create()
     {
         
-            $topics = Topic::all();
-    
+            $topics = \App\Topic::all();
+        
+        $correct_options = [
+            'option1' => 'Option #1',
+            'option2' => 'Option #2',
+            'option3' => 'Option #3',
+            'option4' => 'Option #4',
+            'option5' => 'Option #5'
+        ];
 
-        return view('pages.quiz.questions.create')->with('topics',$topics);
+        return view('pages.quiz.questions.create')->with('correct_options',$correct_options)->with('topics',$topics) ;
     }
 
     /**

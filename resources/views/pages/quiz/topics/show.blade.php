@@ -1,29 +1,25 @@
 @extends('Master.Admin')
-
 @section('content')
-<div class="container">
-    <h3 class="page-title">title</h3>
-    
-    <div class="panel panel-default">
-        <div class="panel-heading">
-          view
+<div class="col-md-12">
+    <div class="box-inn-sp">
+        <div class="inn-title">
+            <h4>View Topic</h4>
+            <p>Education is about teaching, learning skills and knowledge.</p>
         </div>
-        
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <table class="table table-bordered table-striped">
-                        <tr><th>title</th>
-                    <td>{{ $topic->title }}</td></tr>
-                    </table>
-                </div>
+        <div class="tab-inn">
+            <div class="table-responsive table-desi">
+                <table class="table table-hover ">
+                    <tbody>
+                        
+                            <tr data-entry-id="{{ $topic->id }}">
+                                <tr><td>title</td>
+                                    <td>{{$topic->title }}</td></tr>
+
+                    </tbody>
+                </table>
             </div>
-
-            <p>&nbsp;</p>
-
-            <a href="{{ route('topics.index') }}" class="btn btn-default">back to list</a>
         </div>
     </div>
-
 </div>
+<a href="{{ route('topics.index') }}" class="btn btn-default">back to list</a>
 @endsection

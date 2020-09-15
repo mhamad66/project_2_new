@@ -66,7 +66,9 @@ public function __construct()
      */
     public function edit(User $user)
     {
-        return view('users.edit')->with('user',$user);
+        
+        $profile = $user->profile;
+        return view('users.edit')->with(['user'=>$user,'profile'=>$profile]);
     }
 
     /**

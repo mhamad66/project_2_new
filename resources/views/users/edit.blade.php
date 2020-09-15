@@ -10,6 +10,14 @@
       <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Name : {{$user->name}}</a>
       <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Email: {{$user->email}}</a>
         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"> Role: {{$user->roles->first()->display_name}} </a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Address: {{$profile->address}}</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">phone_number: {{$profile->phone_number}}</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Facebook: {{$profile->facebook}}</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">image_user <img src="{{$user->hasImageUser()?asset('storage/'.$user->getImageUser()):$user->getAvatar()}}" width="100"> </img></a>
+
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ImageIdentificationPaper <img src="{{$user->hasImageIdentificationPaper()?asset('storage/'.$user->image_identification_paper()):$user->getAvatar()}}" width="100"> </img></a>
+    
+        
         {{-- <div class="form-group">
 <div class="checkbox">
     <label> 

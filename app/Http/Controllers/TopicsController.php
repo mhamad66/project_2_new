@@ -89,7 +89,7 @@ class TopicsController extends Controller
     {
         $topic = Topic::findOrFail($id);
 
-        return view('pages.quiz.topics.show', compact('topic'));
+        return view('pages.quiz.topics.show')->with('topic',$topic);
     }
 
 

@@ -13,7 +13,7 @@
                   <label for="" class="control-label"> Topic</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="topic_id">
                     @foreach ($topics as $topic)
-                    <option value="{{ $topic->id}}">{{ $topic->title }}</option>
+                    <option value="{{$topic->id}}">{{$topic->title}}</option>
                     @endforeach
                   
                 </select>
@@ -119,13 +119,12 @@
                 <div class="col-xs-12 form-group">
                     {{-- {!! Form::label('correct', 'Correct', ['class' => 'control-label']) !!}
                     {!! Form::select('correct', $correct_options, old('correct'), ['class' => 'form-control']) !!} --}}
-                    <label for="" class="control-label">corect</label>
+                    <label for="" class="control-label">correct</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="correct">
-                    <option value="1">option1</option>
-                        <option value="2">option2</option>
-                        <option value="3">option3</option>
-                        <option value="4">option4</option>
-                        <option value="5">option5</option>
+                        @foreach ($correct_options as $key => $value)
+                        <option value="{{$key}}"> {{$value}}</option>
+                        @endforeach
+                      
                     </select>
                     <p class="help-block"></p>
                     @if($errors->has('correct'))
