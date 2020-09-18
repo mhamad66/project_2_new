@@ -14,14 +14,16 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th>image</th>
                                     <th>Course Name</th>
                                     <th>Title</th>
                                     <th>Category</th>
                                     <th>Year</th>
-                                    <th>Number of lectuere</th>
-                                    <th>View More informtion</th>
-                                    <th>Add lecture</th>
+                                    <th>Num lec</th>
+                                    <th>More inf</th>
+                                    <th>Add lec</th>
                                     <th>Delete</th>
+                                    <th>Edite</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,7 +41,7 @@
                                                 PUBLIC
                                             @endif
                                         </td>
-                                        <td>dd</td>
+                                        <td>{{count(\App\Lecture::all()->where('course_id',$course->id))}}</td>
                                         <td><a href="{{route('InfoCourse',['id' => $course->id])}}"
                                                style="color: #ffffff" class="label label-info">viewMore</a></td>
                                         <td><a href="{{route('AddLectureId',['id' =>$course->id])}}"

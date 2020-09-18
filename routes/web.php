@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 
-Route::get('/a', function () {return view(\route('AddCourse'));});
+Route::get('/a', function () {return view('Admin.AdminDashbord');});
 
 
 
@@ -50,6 +50,35 @@ Route::prefix('Categorie')->middleware('auth')->group( function () {
 
 
 //End Delete
+});
+
+
+
+Route::prefix('Event')->middleware('auth')->group( function () {
+
+    Route::get('/IndexEvent', 'Event\EventConttroller@index')->name('IndexEvent');
+
+
+    Route::get('/AddEvent', 'Event\EventConttroller@add')->name('AddEvent');
+    Route::post('/AddEvent', 'Event\EventConttroller@add')->name('AddEvent');
+
+
+    Route::get('/DeleteEvent/{id}', 'Event\EventConttroller@delete')->name('DeleteEvent');
+
+});
+
+
+
+Route::prefix('Mark')->middleware('auth')->group( function () {
+
+    Route::get('/IndexMark', 'Mark\MarkController@index')->name('IndexMark');
+
+
+    Route::get('/AddMark', 'Mark\MarkController@add')->name('AddMark');
+    Route::post('/AddMark', 'Mark\MarkController@add')->name('AddMark');
+
+    Route::get('/DeleteMark/{id}', 'Mark\MarkController@delete')->name('DeleteMark');
+
 });
 
 

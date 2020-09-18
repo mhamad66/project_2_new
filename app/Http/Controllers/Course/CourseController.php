@@ -33,7 +33,6 @@ class CourseController extends Controller
             $course->user_id = $user_id;
             $course->category_id = $request->input('categorie');
             $course->year = $request->input('year');
-
             $image = $request->file('image');
             $new_name = time() . '.' . $image->getClientOriginalExtension();
             $request->image->move(public_path('images/course_images'), $new_name);
