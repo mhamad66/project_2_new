@@ -1,7 +1,8 @@
-@extends('Master.Admin')
+@extends('Master.Main')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.results.title')</h3>
+<div class="container">    
+<h3 class="page-title">@lang('quickadmin.results.title')</h3>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -15,12 +16,12 @@
                         @if(Auth::user()->hasRole('super_admin'))
                         <tr>
                             <th>@lang('quickadmin.results.fields.user')</th>
-                            <td>{{ $test->user->name or '' }} ({{ $test->user->email or '' }})</td>
+                            <td>{{ $test->user->name  }} ({{ $test->user->email  }})</td>
                         </tr>
                         @endif
                         <tr>
                             <th>@lang('quickadmin.results.fields.date')</th>
-                            <td>{{ $test->created_at or '' }}</td>
+                            <td>{{ $test->created_at  }}</td>
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.results.fields.result')</th>
@@ -78,4 +79,5 @@
             <a href="{{ route('results.index') }}" class="btn btn-default">See all my results</a>
         </div>
     </div>
-@stop
+</div>
+    @stop

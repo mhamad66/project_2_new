@@ -1,8 +1,8 @@
-@extends('Master.Admin')
+@extends('Master.Main')
    
 @section('content')
-<div class="container">
-    <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
+<div class="container">   
+<h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
     <form method='post' action="{{ route('tests.store') }}">
         @csrf
     <div class="panel panel-default">
@@ -30,13 +30,20 @@
                             value="{{ $question->id }}">
                     @foreach($question->options as $option)
                         <br>
-                        <label class="radio-inline">
+                        {{-- <label class="radio-inline">
                             <input
                                 type="radio"
                                 name="answers[{{ $question->id }}]"
+                                class="form-check-input"
                                 value="{{ $option->id }}">
                             {{ $option->option }}
-                        </label>
+                        </label> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answers[{{ $question->id }}]" id="{{ $option->id }}" value="{{ $option->id }}">
+                            <label class="form-check-label" for="{{ $option->id }}">
+                                {{ $option->option }}
+                            </label>
+                          </div>
                     @endforeach
                     </div>
                 </div>
@@ -48,6 +55,7 @@
     </div>
     <button type='submit' class="btn btn-primary">save</button>
 </from>
+</div>
 @endsection
 
 @section('javascript')
