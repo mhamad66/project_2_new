@@ -172,14 +172,12 @@
                     {{-------------------------------Categorie --------------------------------------}}
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
                                                                                    aria-hidden="true"></i>
-                            Categories</a>
+                            Categorie</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
                                 <li><a href="{{route('IndexCategorie')}}">All Categorie</a>
                                 </li>
                                 <li><a href="{{route('AddCategorie')}}">Add New Categorie</a>
-                                </li>
-                                <li><a href="admin-trash-courses.html">Trash Categorie</a>
                                 </li>
                             </ul>
                         </div>
@@ -246,39 +244,38 @@
 </li>
 {{---------------------------------------  End homeworks  ---------------------}}
 
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user"
-                                                                                   aria-hidden="true"></i> Users</a>
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                   aria-hidden="true"></i>
+                            Mark</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
-                                <li><a href="admin-user-all.html">All Users</a>
+                                <li><a href="{{route('IndexMark')}}">All Mark</a>
                                 </li>
-                                <li><a href="admin-user-add.html">Add New user</a>
+
+                                <li><a href="{{route('AddMark')}}">Add New Mark</a>
                                 </li>
+
                             </ul>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o"
-                                                                                   aria-hidden="true"></i>All Pages</a>
+
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+                                                                                   aria-hidden="true"></i>
+                            Event</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
-                                <li><a href="admin-page-all.html">Pages</a>
+                                <li><a href="{{route('IndexEvent')}}">All Event</a>
                                 </li>
-                                <li><a href="admin-page-add.html">Create New Page</a>
+                                <li><a href="{{route('AddEvent')}}">Add New Event</a>
                                 </li>
+
                             </ul>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bars"
-                                                                                   aria-hidden="true"></i> Menu</a>
-                        <div class="collapsible-body left-sub-menu">
-                            <ul>
-                                <li><a href="admin-main-menu.html">Main menu</a></li>
-                                <li><a href="admin-about-menu.html">About menu</a></li>
-                                <li><a href="admin-admission-menu.html">Admission menu</a></li>
-                                <li><a href="admin-all-menu.html">All page menu</a></li>
-                            </ul>
-                        </div>
-                    </li>
+
+
+
+
                     <li><a href="{{route('profile.edit',Auth::user()->id)}}">
                         <i class="fa fa-image" aria-hidden="true"></i> profile</a>
                     </li>

@@ -17,7 +17,6 @@ class CreateTopicsTable extends Migration
             $table->string('title')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
             $table->index(['deleted_at']);
         });
     }

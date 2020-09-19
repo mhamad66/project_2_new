@@ -1,88 +1,39 @@
 @extends('Master.Admin')
 @section('content')
-    <div class="sb2-2-3">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box-inn-sp admin-form">
-                    <div class="sb2-2-add-blog sb2-2-1">
-                        <h2>Add New Course</h2>
-
-
-                        <div class="tab-content">
-                            <div id="home" class="tab-pane fade active in">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Course Information</h4>
-                                        <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
-                                    </div>
-                                    <div class="bor">
-                                        <form>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input id="list-title" type="text" class="validate">
-                                                    <label for="list-title" class="">Course Name</label>
-                                                </div>
-                                                <div class="input-field col s12">
-                                                    <input id="list-title" type="text" class="validate">
-                                                    <label for="list-title" class=""> Title Name</label>
-                                                </div>
-
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <textarea class="materialize-textarea"></textarea>
-                                                    <label>Course Descriptions:</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div  class="col-sm-6">
-                                                    <input id="list-name" style="background-color: #002147" name="image" type="file" class="btn btn-primary">
-                                                </div>
-
-                                            </div>
-                                            <div  class="col-sm-6 , form-group ">
-                                                <label for="">Choise Year  Or public : </label>
-                                                <select name="year" class="form-control" id="">
-                                                    <option value="0">Public</option>
-                                                    <option value="1">FIRST</option>
-                                                    <option value="2">SECOND</option>
-                                                    <option value="3">THIRD</option>
-                                                    <option value="4">FOURTH</option>
-                                                    <option value="5">FIFTH</option>
-                                                </select>
-                                            </div>
-
-{{--                                            <div class="col-sm-6 , form-group ">--}}
-{{--                                                <label for="">Choise Categorie: </label>--}}
-{{--                                                <select name="categorie" class="form-control" id="">--}}
-{{--                                                    <option value="0">!---</option>--}}
-
-{{--                                                @foreach($categories as $cat)--}}
-{{--                                                    <option value="{{$cat->id}}">{{@$cat->name}}</option>--}}
-{{--                                                        @endforeach--}}
-{{--                                                </select>--}}
-{{--                                            </div>--}}
-
-
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input type="submit" style="background-color: #002147" class="btn btn-primary"  value="Add Course">
-                                                </div>
-                                            </div>
-
-
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="sb2-2-1">
+        <h2>Admin Dashboard</h2>
+        <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+        <div class="db-2">
+            <ul>
+                <li>
+                    <div class="dash-book dash-b-1">
+                        <h5>All Courses</h5>
+                        <h4>948</h4>
+                        <a href="#">View more</a>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <div class="dash-book dash-b-2">
+                        <h5>Admission</h5>
+                        <h4>672</h4>
+                        <a href="#">View more</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="dash-book dash-b-3">
+                        <h5>Students</h5>
+                        <h4>689</h4>
+                        <a href="#">View more</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="dash-book dash-b-4">
+                        <h5>Enquiry</h5>
+                        <h4>24</h4>
+                        <a href="#">View more</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-
-
 @endsection
