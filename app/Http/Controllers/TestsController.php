@@ -23,24 +23,34 @@ class TestsController extends Controller
     {
         // $topics = Topic::inRandomOrder()->limit(10)->get();
 
-        $questions = Question::inRandomOrder()->limit(10)->get();
-        foreach ($questions as &$question) {
-            $question->options = QuestionsOption::where('question_id', $question->id)->inRandomOrder()->get();
-        }
+        // $questions = Question::inRandomOrder()->limit(10)->get();
+        // foreach ($questions as &$question) {
+        //     $question->options = QuestionsOption::where('question_id', $question->id)->inRandomOrder()->get();
+        // }
+        
 
-        /*
-        foreach ($topics as $topic) {
-            if ($topic->questions->count()) {
-                $questions[$topic->id]['topic'] = $topic->title;
-                $questions[$topic->id]['questions'] = $topic->questions()->inRandomOrder()->first()->load('options')->toArray();
-                shuffle($questions[$topic->id]['questions']['options']);
-            }
-        }
-        */
-
-        return view('pages.quiz.tests.create', compact('questions'));
+        
+        // foreach ($topics as $topic) {
+        //     if ($topic->questions->count()) {
+        //         $questions[$topic->id]['topic'] = $topic->title;
+        //         $questions[$topic->id]['questions'] = $topic->questions()->inRandomOrder()->first()->load('options')->toArray();
+        //         shuffle($questions[$topic->id]['questions']['options']);
+        //     }
+        // }
+$topics = Topic::all();
+        return view('pages.quiz.tests.index', compact('topics'));
     }
 
+    public function goTest(Request $request){
+         $questions = Question::where('topic_id',$request->topic_id)->inRandomOrder()->limit(10)->get();
+        foreach ($questions as &$question) {
+            $question->options = QuestionsOption::where('question_id', $question->id)->inRandomOrder()->get();
+        
+        }
+        return view('pages.quiz.tests.create', compact('questions'));
+        
+
+}
     /**
      * Store a newly solved Test in storage with results.
      *

@@ -1,5 +1,6 @@
-@extends('Master.Admin')
+@extends('Master.Main')
 @section('content')
+<div class="container">
     <div class="sb2-2-3">
         <div class="row">
             <div class="col-md-12">
@@ -61,5 +62,5 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection

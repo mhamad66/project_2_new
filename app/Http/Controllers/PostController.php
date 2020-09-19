@@ -41,20 +41,16 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'image' => 'image',
         ]);
-
- 
-
-        Post::create([
-            'title' => request('title'),
-            'image'=>$request->image->store('images', 'public'), 
-            'body' => request('body'),
-           
-            'user_id' => Auth::user()->id
-        ]);
-
-        return redirect()->route('posts.index');
+        $post = new post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->user_id  = Auth::user()->id; 
+        if(!is_null($request->image)){
+           $post->image = $request->image->store('images', 'public');
+        }
+        $post->save();
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -73,10 +69,18 @@ class PostController extends Controller
     {
         return view('pages.posts.edit')->with('post', $post);
     }
-    public function update()
+    public function update(Request $request, $id)
     {
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+
+        return redirect()->route('posts.index');
     }
-    public function destroy()
+    public function destroy($id)
     {
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }

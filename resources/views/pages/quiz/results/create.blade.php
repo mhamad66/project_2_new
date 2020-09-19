@@ -1,4 +1,4 @@
-@extends('Master.Admin')
+@extends('Master.Main')
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.results.title')</h3>

@@ -1,4 +1,4 @@
-@extends('Master.Admin')
+@extends('Master.Main')
    
 @section('content')
 <div class="container">

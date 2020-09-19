@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="shortcut icon" href="{{asset('images/fav.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700"
           rel="stylesheet">
@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style-mob.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}" type="text/css">
-
+    <link rel="stylesheet" href="css/flipdown/flipdown.css" />
+    <script src="js/flipdown/flipdown.js"></script>
 
 
     <title>@yield('title')</title>
@@ -216,7 +217,34 @@
                         </div>
                     </li>
                     {{---------------------------------------  End Lecture  ---------------------}}
-
+{{--------------------------------------- decisions--------------------------}}
+<li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+    aria-hidden="true"></i>
+    decisions </a>
+<div class="collapsible-body left-sub-menu">
+<ul>
+<li><a href="{{ route('decisions.index') }}">decisions </a>
+</li>
+<li><a href="{{ route('decisions.create') }}">add decisions</a>
+</li>
+</ul>
+</div>
+</li>
+{{---------------------------------------  End decisions  ---------------------}}
+{{--------------------------------------- start homework--------------------------}}
+<li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"
+    aria-hidden="true"></i>
+    homeworks </a>
+<div class="collapsible-body left-sub-menu">
+<ul>
+<li><a href="{{ route('homeworks.index') }}">homeworks</a>
+</li>
+<li><a href="{{ route('homeworks.create') }}">add homeworks</a>
+</li>
+</ul>
+</div>
+</li>
+{{---------------------------------------  End homeworks  ---------------------}}
 
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user"
                                                                                    aria-hidden="true"></i> Users</a>

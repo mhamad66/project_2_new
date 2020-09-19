@@ -33,4 +33,28 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
-}
+
+
+    public function hasImage()
+    {
+        if (preg_match('/images/', $this->post->image, $match)) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+        public function getImage()
+        {
+            return $this->post->image;
+        }
+        
+        public function getAvatar()
+        {
+            $hash =  md5(strtolower(trim($this->attributes['email'])));
+    
+            return "https://gravatar.com/avatar/$hash";
+        }
+    }
+
+

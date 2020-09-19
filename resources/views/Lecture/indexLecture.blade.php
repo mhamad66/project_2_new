@@ -1,6 +1,6 @@
-@extends('Master.Admin')
+@extends('Master.Main')
 @section('content')
-
+<div class="container">
         <div class="row">
         <div class="con-title">
             <h2>All  <span>lectures</span></h2>
@@ -68,5 +68,5 @@
             @endforeach
 
     </div>
-
+</div>
     @endsection

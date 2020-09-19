@@ -130,7 +130,11 @@ Route::resource('comments', 'CommentController');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/HomeQuiz', 'HomeQuizController@index');
     Route::resource('tests', 'TestsController');
+    Route::POST('tests/goTest', 'TestsController@goTest')->name('goTest'); 
+    Route::resource('decisions', 'decisionsController');
     Route::resource('profile', 'profileController');
+    Route::resource('homeworks', 'homeworksController');    
+  Route::get('/homework/dawnload/{file}','homeworksController@dawnload');
     // Route::resource('roles', 'RolesController');
     // Route::post('roles_mass_destroy', ['uses' => 'RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
     // Route::resource('users', 'UsersController');
